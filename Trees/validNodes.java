@@ -1,45 +1,8 @@
 package Trees;
 
-/*import java.util.*;
-
-public class BTConstruction {
-
-    static class Node {
-        int val;
-        Node right, left;
-
-        public Node(int val) {
-            this.val = val;
-
-        }
-    }
-
-    public void buildTree(int[] elements) {
-        if (elements.length == 0)
-            return;
-        Node root = new Node(elements[0]);
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
-        int i = 1;
-
-        while (i < elements.length) {
-            Node temp = queue.poll();
-
-            if (i < elements.length) {
-                temp.left = new Node(elements[i++]);
-                queue.add(temp.left);
-            }
-
-            if (i < elements.length) {
-                temp.right = new Node(elements[i++]);
-                queue.add(temp.right);
-            }
-        }
-    }
-}*/
 import java.util.*;
 
-public class BTConstruction {
+public class validNodes {
     static class Node {
         int val;
         Node right, left;
@@ -79,26 +42,29 @@ public class BTConstruction {
                 queue.add(temp.right);
             }
         }
-
         return root;
     }
 
     static int count(Node root) {
-        if (root != null && root.val == 0)
-            return 1;
-        int c = count(root.left) + count(root.right);
         if (root == null)
             return 0;
+
+        int countLeft = count(root.left);
+        int countRight = count(root.right);
+
+        int c = countLeft + countRight;
+
+        // Check if current node satisfies the condition
         if (root.left != null && root.right != null) {
             if (root.val == root.left.val + root.right.val) {
-                root.val = root.left.val + root.right.val;
-                return 1;
-
+                root.val = root.val * 2;
+                System.out.println(root.val);
+                return 1 + c;
             }
-
+        }
+        if (root.val == 0) {
+            return c + 1;
         }
         return c;
-
     }
-
 }
