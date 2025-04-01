@@ -6,6 +6,7 @@ import java.util.Collections;
 public class Arraylist {
     public static void main(String... input) {
         ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
         list.add(1);
         list.add(2);
         System.out.println(list);
@@ -27,6 +28,8 @@ public class Arraylist {
         list.lastIndexOf(1);// return last index of element
         // int[] intArray = list.stream().mapToInt(Integer::intValue).toArray();//
         // converts into array
+        list.add(5);
+        list.addAll(list2);// add all elements of list2 to list
 
     }
 }
