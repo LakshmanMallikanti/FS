@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Employee Client</title>
+</head>
+<body>
+    <h2>Employee Management WebSocket Client</h2>
+    <input type="text" id="commandInput" placeholder="Enter command (e.g., INSERT Alice 50000)">
+    <button onclick="sendCommand()">Send</button>
+    <div id="output"></div>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.onopen = () => {
+            console.log('Connected to server');
+        };
+
+        socket.onmessage = (event) => {
+            document.getElementById('output').innerHTML += `<p>${event.data}</p>`;
+        };
+
+        socket.onclose = () => {
+            console.log('Disconnected from server');
+        };
+
+        function sendCommand() {
+            let command = document.getElementById('commandInput').value;
+            socket.send(command);
+        }
+    </script>
+</body>
+</html>
