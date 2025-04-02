@@ -11,7 +11,11 @@ class TreeNode {
     }
 }
 
-class Solution {
+public class TreefromPP {
+    public static void main(String[] args) {
+
+    }
+
     public TreeNode constructFromPrePost(int[] preorder, int[] postorder) {
         Map<Integer, Integer> postIndexMap = new HashMap<>();
         for (int i = 0; i < postorder.length; i++) {
