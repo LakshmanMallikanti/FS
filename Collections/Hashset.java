@@ -11,6 +11,10 @@ public class Hashset {
         set.add(2);
         set.add(3);
         System.out.println(set.contains(1));
+        for (int n : set) {
+            System.out.println(n);
+        }
+
         Iterator it = set.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());

@@ -24,7 +24,7 @@ public class Hashmap {
             System.out.println("Key: " + key);
         }
         for (Integer value : map.values()) {
-            System.out.println("Value: " + value);
+            System.out.println("Value: " + (int) value);
         }
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {

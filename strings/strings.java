@@ -17,5 +17,7 @@ public class strings {
         System.out.println(a.substring(0, 1));// excludes 1,if 0,0 then print empty string
         System.out.println(s.substring(0));// prints complete string
         System.out.println(a.startsWith("HA"));
+        s.append("k");
+        s.replace(0, 1, "H");
     }
 }

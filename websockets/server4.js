@@ -62,10 +62,7 @@ const WebSocket = require('ws');
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/employeesDB', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log('Connected to MongoDB'))
+mongoose.connect('mongodb://localhost:27017/employeesDB').then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Define Employee Schema

@@ -62,24 +62,44 @@ public class BTConstruction {
     }
 
     public static Node buildTree(int[] elements) {
+        /*
+         * if (elements.length == 0)
+         * return null;
+         * Node root = new Node(elements[0]);
+         * Queue<Node> queue = new LinkedList<>();
+         * queue.add(root);
+         * int i = 1;
+         * while (i < elements.length) {
+         * Node temp = queue.poll();
+         * if (i < elements.length) {
+         * temp.left = new Node(elements[i++]);
+         * queue.add(temp.left);
+         * }
+         * if (i < elements.length) {
+         * temp.right = new Node(elements[i++]);
+         * queue.add(temp.right);
+         * }
+         * }
+         * 
+         * return root;
+         */
         if (elements.length == 0)
             return null;
         Node root = new Node(elements[0]);
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
         int i = 1;
         while (i < elements.length) {
-            Node temp = queue.poll();
+            Node temp = q.poll();
             if (i < elements.length) {
                 temp.left = new Node(elements[i++]);
-                queue.add(temp.left);
+                q.offer(temp.left);
             }
             if (i < elements.length) {
                 temp.right = new Node(elements[i++]);
-                queue.add(temp.right);
+                q.offer(temp.right);
             }
         }
-
         return root;
     }
 

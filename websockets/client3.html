@@ -18,13 +18,18 @@
             console.log('Connected to chat server');
         };
 
-        socket.onmessage = (event) => {
-    event.data.text().then((message) => {
+      //  socket.onmessage = (event) => {
+  /*  event.data.text().then((message) => {
         let chatDiv = document.getElementById('chat');
         chatDiv.innerHTML += `<p>${message}</p>`;
         chatDiv.scrollTop = chatDiv.scrollHeight;
-    });
+    });*/
+    socket.onmessage = async (event) => {
+    let message = await event.data.text();
+    document.getElementById('chat').innerHTML += `<p>${message}</p>`;
 };
+
+//};
 
         socket.onclose = () => {
             console.log('Disconnected from chat server');

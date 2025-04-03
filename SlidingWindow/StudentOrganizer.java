@@ -1,4 +1,4 @@
-package SlidingWindow;
+package slidingwindow;
 
 /*
 You are a student organizer, and you are given n students. Each student has two values:

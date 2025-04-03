@@ -1,4 +1,4 @@
-package SlidingWindow;
+package slidingwindow;
 /*
  * The Kingdom of CodeLand has a long bridge made of square tiles, where each tile 
 is painted either red ('R') or blue ('B'). A critical mission has been assigned 
