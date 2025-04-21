@@ -3,8 +3,13 @@ package Collections;
 import java.util.*;
 
 public class Hashmap {
+    static final Map<Character, String> phoneMap = Map.of(
+            '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
+            '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
+
     public static void main(String[] args) {
         HashMap<String, Integer> map = new HashMap<>();
+
         map.put("Apple", 10);
         map.put("Banana", 20);
         map.put("Cherry", 30);

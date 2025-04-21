@@ -19,5 +19,8 @@ public class strings {
         System.out.println(a.startsWith("HA"));
         s.append("k");
         s.replace(0, 1, "H");
+        String str = String.valueOf('a');
+        System.out.println(str);// prints a
+        System.out.println(a.indexOf("k"));// gives index of k
     }
 }

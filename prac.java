@@ -57,11 +57,12 @@ public class prac {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int a[][] = new int[n][2];
+        
         for (int i = 0; i < n; i++) {
             a[i][0] = sc.nextInt();
             a[i][1] = sc.nextInt();
         }
-        Arrays.sort(a);
+        
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i][1] <= a[i + 1][0])
                 n--;

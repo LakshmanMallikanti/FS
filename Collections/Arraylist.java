@@ -1,5 +1,6 @@
 package Collections;
 
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -30,6 +31,8 @@ public class Arraylist {
         // converts into array
         list.add(5);
         list.addAll(list2);// add all elements of list2 to list
-
+        ArrayList<ArrayList<Integer>> list3 = new ArrayList<>();// 2D arraylist
+        List<Integer> a = Arrays.asList(1, 2, 3);
+        list3.add(new ArrayList<>(Arrays.asList(4, 5, 6)));
     }
 }
