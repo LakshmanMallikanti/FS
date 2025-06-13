@@ -1,3 +1,4 @@
+package strings;
 +/*
 Ganesh has a habit of writing the words in backward order,
 and writes the sentence without spaces.

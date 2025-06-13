@@ -37,5 +37,8 @@ public class Hashmap {
         }
 
         map.put("Grape", map.getOrDefault("grape", 0) + 1);// will increase the grape valuse by 1
+        map.putIfAbsent("kewi", 0);// will add the value of 0 to kewi if it is not present in the map
+        System.out.println("Updated Map: " + map);
+
     }
 }
