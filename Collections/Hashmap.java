@@ -40,5 +40,9 @@ public class Hashmap {
         map.putIfAbsent("kewi", 0);// will add the value of 0 to kewi if it is not present in the map
         System.out.println("Updated Map: " + map);
 
+        Map<Character, String> mapp = Map.of(
+                '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
+                '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
+
     }
 }

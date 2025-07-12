@@ -1,0 +1,28 @@
+
+int[][] k = Arrays.copy(p); // ❌ This will not work!
+Let me tell it to you straight:
+Arrays.copy(...) doesn’t exist. You probably meant Arrays.copyOf(...), but even that won’t deep copy a 2D array!
+
+✅ Correct Way to Deep Copy a 2D Array in Java:
+
+int[][] k = new int[p.length][];
+for (int i = 0; i < p.length; i++) {
+    k[i] = Arrays.copyOf(p[i], p[i].length);
+}
+This creates a deep copy, meaning:
+
+You get a new outer array
+
+Each inner array is a copy, not just a reference to the original
+
+⚠ Why not just Arrays.copyOf(p, p.length)?
+java
+Copy
+Edit
+int[][] k = Arrays.copyOf(p, p.length); // ❗ Only shallow copy
+This only copies the references to the inner arrays. Changing k[i][j] will still affect p[i][j] 😱
+
+🔥 Want to copy a 2D array of objects like String[][] or Integer[][]?
+Same logic applies — just use a loop and Arrays.copyOf().
+
+ 

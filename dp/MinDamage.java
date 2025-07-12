@@ -13,15 +13,15 @@ public class MinDamage {
                     dp[j] = arr[i][j];
             }
         }
+        System.out.println(Arrays.toString(dp));
         for (int i = n - 2; i >= 0; i--) {
-            int cur[] = new int[n];
             for (int j = 0; j < n; j++) {
-                int down = dp[j];
-                int left = j > 0 ? dp[j - 1] : Integer.MAX_VALUE;
-                int right = j < n - 1 ? dp[j + 1] : Integer.MAX_VALUE;
-                cur[j] = Math.min(down, Math.min(left, right)) + arr[i][j];
+                if (j - 1 >= 0)
+                    dp[j] = Math.min(dp[j], dp[j - 1]) + arr[i][j];
+                if (j + 1 < n)
+                    dp[j] = Math.min(dp[j], dp[j + 1]) + arr[i][j];
             }
-            dp = cur;
+            System.out.println(Arrays.toString(dp));
         }
         int res = Integer.MAX_VALUE;
         for (int i : dp) {
